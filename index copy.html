@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no"/>
+    <title>Kavita Chachcha</title>
+    <!-- CSS  -->
+    <link rel="stylesheet" href="css/w3.css">
+    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+    <link href="css/style.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+  </head>
+  <style media="screen" type="text/css">
+    /*
+    Fade content bs-carousel with hero headers
+    Code snippet by maridlcrmn (Follow me on Twitter @maridlcrmn) for Bootsnipp.com
+    Image credits: unsplash.com
+    */
+    /********************************/
+    /*       Fade Bs-carousel       */
+    /********************************/
+    .fade-carousel {
+    position: relative;
+    height: 90vh;
+    }
+    .fade-carousel .carousel-inner .item {
+    height: 90vh;
+    }
+    .fade-carousel .carousel-indicators > li {
+    margin: 0 2px;
+    background-color: #f39c12;
+    border-color: #f39c12;
+    opacity: .7;
+    }
+    .fade-carousel .carousel-indicators > li.active {
+    width: 10px;
+    height: 10px;
+    opacity: 1;
+    }
+    /********************************/
+    /*          Hero Headers        */
+    /********************************/
+    .hero {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    z-index: 3;
+    color: #fff;
+    text-align: center;
+    text-transform: uppercase;
+    text-shadow: 1px 1px 0 rgba(0,0,0,.75);
+    -webkit-transform: translate3d(-50%,-50%,0);
+    -moz-transform: translate3d(-50%,-50%,0);
+    -ms-transform: translate3d(-50%,-50%,0);
+    -o-transform: translate3d(-50%,-50%,0);
+    transform: translate3d(-50%,-50%,0);
+    }
+    .hero h1 {
+    font-size: 6em;    
+    font-weight: bold;
+    margin: 0;
+    padding: 0;
+    }
+    .fade-carousel .carousel-inner .item .hero {
+    opacity: 0;
+    -webkit-transition: 2s all ease-in-out .1s;
+    -moz-transition: 2s all ease-in-out .1s; 
+    -ms-transition: 2s all ease-in-out .1s; 
+    -o-transition: 2s all ease-in-out .1s; 
+    transition: 2s all ease-in-out .1s; 
+    }
+    .fade-carousel .carousel-inner .item.active .hero {
+    opacity: 1;
+    -webkit-transition: 2s all ease-in-out .1s;
+    -moz-transition: 2s all ease-in-out .1s; 
+    -ms-transition: 2s all ease-in-out .1s; 
+    -o-transition: 2s all ease-in-out .1s; 
+    transition: 2s all ease-in-out .1s;    
+    }
+    /********************************/
+    /*            Overlay           */
+    /********************************/
+    .overlay {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: 2;
+    background-color: #080d15;
+    opacity: .7;
+    }
+    /********************************/
+    /*          Custom Buttons      */
+    /********************************/
+    .btn.btn-hero,
+    .btn.btn-hero:hover,
+    .btn.btn-hero:focus {
+    color: #f5f5f5;
+    background-color: #1abc9c;
+    border-color: #1abc9c;
+    outline: none;
+    margin: 20px auto;
+    }
+    /********************************/
+    /*       Slides backgrounds     */
+    /********************************/
+    .fade-carousel .slides .slide-1, 
+    .fade-carousel .slides .slide-2,
+    .fade-carousel .slides .slide-3,
+    .fade-carousel .slides .slide-4,
+    .fade-carousel .slides .slide-5 {
+    height: 90vh;
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    }
+    .fade-carousel .slides .slide-1 {
+    background-image: url("img/landing/slider1.jpg"); 
+    }
+    .fade-carousel .slides .slide-2 {
+    background-image: url("img/landing/slider2.jpg");
+    }
+    .fade-carousel .slides .slide-3 {
+    background-image: url("img/landing/slider3.jpg");
+    }
+    .fade-carousel .slides .slide-4 {
+    background-image: url("img/landing/slider4.jpg");
+    }
+    .fade-carousel .slides .slide-5 {
+    background-image: url("img/landing/slider5.jpg");
+    }
+    /********************************/
+    /*          Media Queries       */
+    /********************************/
+    @media screen and (min-width: 980px){
+    .hero { width: 980px; }    
+    }
+    @media screen and (max-width: 640px){
+    .hero h1 { font-size: 4em; }    
+    }
+    body {margin: 0;}
+  </style>
+  <body>
+    <nav class="white" role="navigation">
+      <div class="nav-wrapper container">
+        <a id="logo-container" href="#" class="brand-logo">Kavita Chachcha</a>
+        <ul class="right hide-on-med-and-down">
+          <li><a href="#">About</a></li>
+          <li><a href="#">Philosophy</a></li>
+          <li><a href="#">Gallery</a></li>
+          <li><a href="#">Focus</a></li>
+          <li><a href="#">Contact</a></li>
+        </ul>
+        <ul id="nav-mobile" class="side-nav">
+          <li><a href="#">About</a></li>
+          <li><a href="#">Philosophy</a></li>
+          <li><a href="#">Gallery</a></li>
+          <li><a href="#">Focus</a></li>
+          <li><a href="#">Contact</a></li>
+        </ul>
+        <a href="#" data-activates="nav-mobile" class="button-collapse"><i class="material-icons">menu</i></a>
+      </div>
+    </nav>
+    <div class="carousel fade-carousel slide" data-ride="carousel" data-interval="4000" id="bs-carousel">
+      <!-- Overlay -->
+      <!-- Indicators -->
+      <ol class="carousel-indicators">
+        <li data-target="#bs-carousel" data-slide-to="0" class="active"></li>
+        <li data-target="#bs-carousel" data-slide-to="1"></li>
+        <li data-target="#bs-carousel" data-slide-to="2"></li>
+        <li data-target="#bs-carousel" data-slide-to="3"></li>
+        <li data-target="#bs-carousel" data-slide-to="4"></li>
+      </ol>
+      <!-- Wrapper for slides -->
+      <div class="carousel-inner">
+        <div class="item slides active">
+          <div class="slide-1"></div>
+          <div class="hero">
+            <hgroup>
+              <h3>space structure surface</h3>
+            </hgroup>
+            <button class="waves-effect waves-light btn" role="button">Seedsdsd all features</button>
+          </div>
+        </div>
+        <div class="item slides">
+          <div class="slide-2"></div>
+          <div class="hero">
+            <hgroup>
+              <h3>contemporary</h3>
+            </hgroup>
+            <button class="waves-effect waves-light btn" role="button">See all features</button>
+          </div>
+        </div>
+        <div class="item slides">
+          <div class="slide-3"></div>
+          <div class="hero">
+            <hgroup>
+              <h3>timeless</h3>
+            </hgroup>
+            <button class="waves-effect waves-light btn" role="button">See all features</button>
+          </div>
+        </div>
+        <div class="item slides">
+          <div class="slide-4"></div>
+          <div class="hero">
+            <hgroup>
+              <h3>material and texture</h3>
+            </hgroup>
+            <button class="waves-effect waves-light btn" role="button">See all features</button>
+          </div>
+        </div>
+        <div class="item slides">
+          <div class="slide-5"></div>
+          <div class="hero">
+            <hgroup>
+              <h3>visual elements</h3>
+            </hgroup>
+            <button class="waves-effect waves-light btn" role="button">See all features</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!--
+      <div id="index-banner" class="parallax-container">
+        <div class="section no-pad-bot">
+          <div class="container">
+            <br><br>
+            
+            <h1 class="header center teal-text text-lighten-2">Parallax Template</h1>
+            <div class="row center">
+              <h5 class="header col s12 light">A modern responsive front-end framework based on Material Design</h5>
+            </div>
+            <div class="row center">
+              <a href="http://materializecss.com/getting-started.html" id="download-button" class="btn-large waves-effect waves-light teal lighten-1">Get Started</a>
+            </div>
+            <br><br>
+            
+            
+          </div>
+        </div>
+        <div class="parallax"><img src="background1.jpg" alt="Unsplashed background img 1"></div>
+      </div>
+      -->
+    <div class="container">
+      <div class="section">
+        <!--   Icon Section   -->
+        <div class="row">
+          <div class="col s12 m2">
+          </div>
+          <div class="col s12 m8">
+            <div class="icon-block">
+              <h2 class="center brown-text"><i class="material-icons">person</i></h2>
+              <h5 class="center">About</h5>
+              <p class="light">Design architect, free thinker, trailing spouse, millenial mom, space planner, avid travel photographer, collector of 90's design magazines, saree enthusiast, museum fanatic, fabric artist, potluck organizer, short story writer, visual storyteller.</p>
+              <center><a class="waves-effect waves-light btn">learn more</a></center>
+            </div>
+          </div>
+          <div class="col s12 m2">
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="parallax-container valign-wrapper">
+      <div class="container">
+        <div class="row center">
+          <h4 class="header col s12 light">SPEAKING DESIGN</h4>
+          <h5>THAT DRIVES CHANGE</h5>
+          <h5>WHICH IS BOTH A PROCESS AND A TOOL</h5>
+          <h5>DERIVES CONCEPT FROM NATURE</h5>
+          <h5>ALL ABOUT EXPLORATION SELECTION PRESENTATION</h5>
+          <center><a class="waves-effect waves-light btn">learn more</a></center>
+        </div>
+      </div>
+      <div class="parallax"><img src="img/parallax/parallax1.jpg" alt="Unsplashed background img 2"></div>
+    </div>
+    <div class="container">
+      <div class="section">
+        <div class="row">
+          <div class="col s12 center">
+            <h3><i class="mdi-content-send brown-text"></i></h3>
+            <h4>Gallery</h4>
+            <div class="row">
+              <div class="col s12 m4">
+                <div class="card small">
+                  <div class="card-image">
+                    <img src="images/sample-1.jpg">
+                    <span class="card-title">Mumbai high rise residential</span>
+                  </div>
+                  <div class="card-content">
+                    <p>Mumbai high rise residential
+                    </p>
+                  </div>
+                  <div class="card-action">
+                    <a href="#">See more</a>
+                  </div>
+                </div>
+              </div>
+              <div class="col s12 m4">
+                <div class="card small">
+                  <div class="card-image">
+                    <img src="images/sample-1.jpg">
+                    <span class="card-title">Hotel Lumen Dallax TX Interior</span>
+                  </div>
+                  <div class="card-content">
+                    <p>Hotel Lumen Dallax TX Interior
+                    </p>
+                  </div>
+                  <div class="card-action">
+                    <a href="#">see more</a>
+                  </div>
+                </div>
+              </div>
+              <div class="col s12 m4">
+                <div class="card small">
+                  <div class="card-image">
+                    <img src="images/sample-1.jpg">
+                    <span class="card-title">Hotel Lumen Dallax TX Exterior</span>
+                  </div>
+                  <div class="card-content">
+                    <p>Hotel Lumen Dallax TX Exterior
+                    </p>
+                  </div>
+                  <div class="card-action">
+                    <a href="#">see more</a>
+                  </div>
+                </div>
+              </div>
+              <div class="col s12 m4">
+                <div class="card small">
+                  <div class="card-image">
+                    <img src="images/sample-1.jpg">
+                    <span class="card-title">Ski Mountain Resort Colorado</span>
+                  </div>
+                  <div class="card-content">
+                    <p>Ski Mountain Resort Colorado
+                    </p>
+                  </div>
+                  <div class="card-action">
+                    <a href="#">See more</a>
+                  </div>
+                </div>
+              </div>
+              <div class="col s12 m4">
+                <div class="card small">
+                  <div class="card-image">
+                    <img src="images/sample-1.jpg">
+                    <span class="card-title">Design More</span>
+                  </div>
+                  <div class="card-content">
+                    <p>Design More
+                    </p>
+                  </div>
+                  <div class="card-action">
+                    <a href="#">see more</a>
+                  </div>
+                </div>
+              </div>
+              <div class="col s12 m4">
+                <div class="card small">
+                  <div class="card-image">
+                    <img src="images/sample-1.jpg">
+                    <span class="card-title">Graphic Artwork</span>
+                  </div>
+                  <div class="card-content">
+                    <p>Graphic Artwork</p>
+                  </div>
+                  <div class="card-action">
+                    <a href="#">see more</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="parallax-container valign-wrapper">
+      <div class="container">
+        <div class="row center">
+          <h4>FOCUS</h4>
+          <h5 class="header col s12 light">Photography is a deep connection between the aesthetic and its subject in that single frame.</h5>
+          <center><a class="waves-effect waves-light btn">learn more</a></center>
+        </div>
+      </div>
+      <div class="parallax"><img src="img/parallax/parallax2.jpg" alt="Unsplashed background img 3"></div>
+    </div>
+    <footer class="page-footer teal">
+      <div class="container">
+        <div class="row">
+          <div class="col l6 s12">
+            <div class="row">
+              <h5 class="white-text">Get in touch</h5>
+              <p class="grey-text text-lighten-4">Leave your name and email below along with what you are looking for in the message box. Kavita will get back to you ASAP.</p>
+              <form class="col s12">
+                <div class="row">
+                  <div class="input-field col s6">
+                    <input id="first_name" type="text" class="validate">
+                    <label for="first_name">Name</label>
+                  </div>
+                  <div class="input-field col s6">
+                    <input id="last_name" type="text" class="validate">
+                    <label for="last_name">Email</label>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="input-field col s12">
+                    <textarea id="textarea1" class="materialize-textarea"></textarea>
+                    <label for="textarea1">Message</label>
+                  </div>
+                </div>
+                <a class="waves-effect waves-light btn">Submit</a>
+              </form>
+            </div>
+          </div>
+          <div class="col l6 s12">
+            <center><img src="img/getintouch.jpg" width="300"></center>
+          </div>
+        </div>
+      </div>
+      <div class="footer-copyright">
+        <div class="container">
+          <center>Website Designed by <u><b><a class="orange-text" href="https://snavjivan.github.io" target="_blank">Sarthak Navjivan</a></b></u></center>
+        </div>
+      </div>
+    </footer>
+    <!--  Scripts-->
+    <script src="vendor/jquery/jquery.min.js"></script>
+    <script src="vendor/bootstrap/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"></script>
+    <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+    <script src="js/materialize.js"></script>
+    <script src="js/init.js"></script>
+  </body>
+</html>
